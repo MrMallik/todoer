@@ -19,7 +19,7 @@ public class TodoerApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-						.allowedOrigins("https://toder-front-end.herokuapp.com/")
+						.allowedOrigins("https://toder-front-end.herokuapp.com/:8080")
 						.allowedMethods("GET", "POST", "PUT", "DELETE");
 			}
 		};
