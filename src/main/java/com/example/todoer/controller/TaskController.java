@@ -2,6 +2,7 @@ package com.example.todoer.controller;
 
 import com.example.todoer.models.Task;
 import com.example.todoer.repository.TaskRepository;
+import com.example.todoer.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,8 @@ public class TaskController {
 
     @Autowired
     private TaskRepository repository;
+    @Autowired
+    private TaskService service;
 
     @PostMapping("/addTask")
     public void addTask(@RequestBody Task task){
@@ -33,4 +36,9 @@ public class TaskController {
     public List<Task> getAllTasks(){
         return repository.findAll();
     }
+
+//    @PostMapping("/editTask/")
+//    public void editTask(@RequestBody Task task){
+//        service.editTask(task);
+//    }
 }
